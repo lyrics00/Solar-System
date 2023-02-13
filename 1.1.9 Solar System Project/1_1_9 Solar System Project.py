@@ -2,7 +2,14 @@ import turtle
 import math
 import time
 import tkinter
-
+screen = turtle.Screen()
+sun_image = 'sun.gif'
+earth_image = 'earth.gif'
+venus_image = 'venus (1).gif'
+mars_image = 'mars.gif'
+jupiter_image = "jupiter.gif"
+saturn_image = "saturn.gif"
+uranus_image = "uranus.gif"
 
 
 #turtle.seth(45)
@@ -22,18 +29,15 @@ def ellipse(width,length,tilt, delay, rotations, turtle):
         
 
 def main():
-    screen = turtle.Screen()
     screen.addshape('space background.gif')
     screen.addshape('earth.gif')
-    screen.addshape('venus.gif')
+    screen.addshape('venus (1).gif')
     screen.addshape('mars.gif')
     screen.addshape('sun.gif')
+    screen.addshape('jupiter.gif')
+    screen.addshape('saturn.gif')
+    screen.addshape('uranus.gif')
     screen.bgpic('space background.gif')
-
-    sun_image = 'sun.gif'
-    earth_image = 'earth.gif'
-    venus_image = 'venus.gif'
-    mars_image = 'mars.gif'
 
     sun = turtle.Turtle()
     sun.shape(sun_image)
@@ -43,8 +47,17 @@ def main():
     venus.shape(venus_image)
     mars = turtle.Turtle()
     mars.shape(mars_image)
-    ellipse(300,300,60, 0.1, 5, sun)
-    ellipse()
+    jupiter = turtle.Turtle()
+    jupiter.shape(jupiter_image)
+    saturn = turtle.Turtle()
+    saturn.shape(saturn_image)
+    uranus = turtle.Turtle()
+    uranus.shape(uranus_image)
+    earth.goto(0,100)
+    ellipse(300, 300, 60, 0.1, 5, sun)
+    sun.addshape(ellipse(400, 400, 60, 0.0, 5, jupiter))
+    sun.pu
 
 if __name__ == "__main__":
     main()
+screen.mainloop()
